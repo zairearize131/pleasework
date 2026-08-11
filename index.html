@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create, Collaborate, Publish</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Screen 1: Registration -->
+  <section id="registration-screen" class="screen active bg-black">
+    <div class="card">
+      <h2>Step 1: Basic Information</h2>
+      <form id="registration-form">
+        <label>Name * <input type="text" id="reg-name" required></label>
+        <label>Email (Optional) <input type="email" id="reg-email"></label>
+        <label>Date of Birth * <input type="date" id="reg-dob" required></label>
+        <label>Phone Number (Optional) <input type="tel" id="reg-phone"></label>
+        <button type="submit" class="btn btn-orange">Submit Information</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Screen 2: Profile Creation -->
+  <section id="profile-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Step 2: Create Your Profile</h2>
+      <button id="nav-settings-btn" class="btn btn-pink btn-small">Settings</button>
+      <form id="profile-form">
+        <label>Username * <input type="text" id="prof-username" required></label>
+        <label>Password * <input type="password" id="prof-password" required></label>
+        <label>Profile Picture (Optional) <input type="file" id="prof-pic" accept="image/*"></label>
+        <label>Description (Optional) <textarea id="prof-desc"></textarea></label>
+        <label>Location (Optional) <input type="text" id="prof-location"></label>
+        <label>Social / Channel Link (Optional) <input type="url" id="prof-link" placeholder="https://youtube.com/..."></label>
+        <label>Profile Music (Optional sound choice) 
+          <select id="prof-music">
+            <option value="none">None</option>
+            <option value="beat1">Electronic Groove</option>
+            <option value="beat2">Lo-Fi Chill</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-orange">Let’s Go!</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Screen 3: Settings Screen -->
+  <section id="settings-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Account Settings</h2>
+      <form id="settings-form">
+        <label>Username <input type="text" id="set-username"></label>
+        <label>Password <input type="password" id="set-password"></label>
+        <label>Email <input type="email" id="set-email"></label>
+        <label>Phone <input type="tel" id="set-phone"></label>
+        <div class="button-row">
+          <button type="button" id="save-settings-btn" class="btn btn-pink">Save Changes</button>
+          <button type="button" class="btn btn-pink back-to-profile-btn">Back to Profile</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Screen 4: Main Navigation Screen -->
+  <section id="main-screen" class="screen bg-orange">
+    <div class="card bg-orange-card">
+      <h1 class="text-white">Main Dashboard</h1>
+      <div class="navigation-grid">
+        <button id="nav-game-btn" class="btn btn-red btn-large">Game</button>
+        <button id="nav-music-btn" class="btn btn-blue btn-large">Music</button>
+        <button id="nav-stream-btn" class="btn btn-green btn-large">Stream</button>
+        <button id="nav-merge-btn" class="btn btn-yellow btn-large">Merge</button>
+        <button id="nav-connect-btn" class="btn btn-purple btn-large">Connect (AI Cybersecurity)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Sub-Menu Template (Create, Collab, Record, Publish options) -->
+  <section id="sub-options-modal" class="screen bg-black">
+    <div class="card">
+      <h2 id="sub-options-title">Section Options</h2>
+      <div class="sub-nav-buttons">
+        <button id="opt-create-btn" class="btn">Create</button>
+        <button id="opt-collab-btn" class="btn">Collab</button>
+        <button id="opt-record-btn" class="btn">Record</button>
+        <button id="opt-publish-btn" class="btn">Publish</button>
+      </div>
+      <button class="btn btn-secondary back-to-main-btn">Back to Main Screen</button>
+    </div>
+  </section>
+
+  <!-- Section: Music Studio -->
+  <section id="music-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Music Creation Studio</h2>
+      <div class="studio-controls">
+        <label>Select Instrument: 
+          <select id="music-instrument">
+            <option>Drums</option>
+            <option>Synthesizer</option>
+            <option>Bass</option>
+          </select>
+        </label>
+        <button id="music-ready-btn" class="btn btn-blue">Ready</button>
+      </div>
+      
+      <h3>Drum Pad Machine</h3>
+      <div class="drum-pad-grid">
+        <button class="drum-pad btn btn-blue">Kick</button>
+        <button class="drum-pad btn btn-blue">Snare</button>
+        <button class="drum-pad btn btn-blue">Hi-Hat</button>
+        <button class="drum-pad btn btn-blue">Clap</button>
+      </div>
+
+      <h3>Genre Tracks & Audio Mixing</h3>
+      <button id="load-tracks-btn" class="btn btn-blue">Load Preset Tracks</button>
+      <div id="tracks-container" class="track-list"></div>
+
+      <div class="action-row">
+        <button id="save-music-btn" class="btn btn-blue">Save</button>
+        <button id="publish-music-btn" class="btn btn-blue">Publish to Socials</button>
+        <button class="btn btn-blue back-to-main-btn">Main Screen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gaming Hub -->
+  <section id="game-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Gaming Hub</h2>
+      <p>Search & Play Games across the Internet</p>
+      <input type="text" id="game-search" placeholder="Search Roblox, Call of Duty, Fortnite...">
+      <div class="game-links">
+        <a href="https://www.roblox.com" target="_blank" class="game-chip">Roblox</a>
+        <a href="https://www.imvu.com" target="_blank" class="game-chip">IMVU</a>
+      </div>
+      
+      <div class="controller-section">
+        <button id="connect-controller-btn" class="btn btn-red">Connect Hardware Controller (PS, Xbox, Nintendo, VR)</button>
+        <p id="controller-status"></p>
+      </div>
+
+      <div class="action-row">
+        <button id="save-game-btn" class="btn btn-red">Save Gameplay</button>
+        <button id="publish-game-btn" class="btn btn-red">Publish Gameplay</button>
+        <button class="btn btn-red back-to-main-btn">Main Screen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Stream Studio -->
+  <section id="stream-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Stream Studio</h2>
+      <div class="stream-layout">
+        <div class="video-container">
+          <div class="video-placeholder">[ Live Video Stream Preview ]</div>
+          <label>Volume: <input type="range" id="stream-volume" min="0" max="100"></label>
+        </div>
+        <div class="chat-container">
+          <h3>Stream Chat</h3>
+          <div id="chat-box" class="chat-box"></div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Say something...">
+            <button id="send-chat-btn" class="btn btn-green">Send</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button id="save-stream-btn" class="btn btn-green">Save Stream</button>
+        <button id="publish-stream-btn" class="btn btn-green">Publish Stream</button>
+        <button class="btn btn-green back-to-main-btn">Main Screen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Merge Hub -->
+  <section id="merge-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Merge Collaboration Hub</h2>
+      <p>Invite users and connect creation rooms to combine work.</p>
+      <div class="merge-controls">
+        <button class="btn btn-yellow">Music Room</button>
+        <button class="btn btn-yellow">Gameplay Room</button>
+        <button class="btn btn-yellow">Streaming Collab Room</button>
+      </div>
+      <div class="communication-tools">
+        <button class="btn btn-yellow">Direct Call</button>
+        <button class="btn btn-yellow">Group Chat Call</button>
+        <button class="btn btn-yellow">Text Chat</button>
+      </div>
+      <div class="action-row">
+        <button class="btn btn-yellow">Save Merged Work</button>
+        <button class="btn btn-yellow">Publish Merged Work</button>
+        <button class="btn btn-yellow back-to-main-btn">Main Screen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Connect / AI Cybersecurity -->
+  <section id="connect-screen" class="screen bg-black">
+    <div class="card">
+      <h2>Connect AI Assistant</h2>
+      <div id="ai-chat" class="ai-chat-box">
+        <p><strong>AI Security Bot:</strong> Hello! I can help secure your account with custom cyber security protocols or assist with platform navigation.</p>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="ai-input" placeholder="Ask AI to install cybersecurity or help...">
+        <button id="ai-send-btn" class="btn btn-purple">Send</button>
+      </div>
+      <button class="btn btn-purple back-to-main-btn">Main Screen</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
